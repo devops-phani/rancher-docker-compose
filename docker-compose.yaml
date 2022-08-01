@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  rancher:
+    image: rancher/rancher:stable
+    restart: unless-stopped
+    hostname: rancher
+    ports:
+    - '8080:80'
+    - '8443:443'
+    volumes:
+      - ./data:/var/lib/rancher
+    privileged: true
